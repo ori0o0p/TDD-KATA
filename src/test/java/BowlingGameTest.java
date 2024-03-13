@@ -35,6 +35,18 @@ public class BowlingGameTest {
         Assertions.assertEquals(bowlingGame.score(), 18);
     }
 
+    @Test
+    public void oneSpare() {
+        BowlingGame bowlingGame = createNewBowlingGame();
+
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(3);
+
+        setRolls(bowlingGame, 17, 0);
+        Assertions.assertEquals(bowlingGame.score(), 16);
+    }
+
     private void setRolls(BowlingGame bowlingGame, int rolls, int pins) {
         for (int i = 0; i < rolls; i++) {
             bowlingGame.roll(pins);
