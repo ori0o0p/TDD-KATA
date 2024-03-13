@@ -18,9 +18,11 @@ public class BowlingGameTest {
     @Test
     public void gutterGame() {
         BowlingGame bowlingGame = createNewBowlingGame();
+        int rolls = 20;
+        int pins = 0;
 
-        for (int i = 0; i < 20; i++) {
-            bowlingGame.roll(0);
+        for (int i = 0; i < rolls; i++) {
+            bowlingGame.roll(pins);
         }
 
         Assertions.assertEquals(bowlingGame.score(), 0);
