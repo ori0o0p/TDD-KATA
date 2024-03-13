@@ -21,11 +21,15 @@ public class BowlingGameTest {
         int rolls = 20;
         int pins = 0;
 
+        setRolls(bowlingGame, rolls, pins);
+
+        Assertions.assertEquals(bowlingGame.score(), 0);
+    }
+
+    private void setRolls(BowlingGame bowlingGame, int rolls, int pins) {
         for (int i = 0; i < rolls; i++) {
             bowlingGame.roll(pins);
         }
-
-        Assertions.assertEquals(bowlingGame.score(), 0);
     }
 
 }
