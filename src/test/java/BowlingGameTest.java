@@ -1,7 +1,6 @@
 import bowlinggame.BowlingGame;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class BowlingGameTest {
 
@@ -24,7 +23,7 @@ public class BowlingGameTest {
             bowlingGame.roll(0);
         }
 
-        assertThat(bowlingGame.score(), 0);
+        Assertions.assertEquals(bowlingGame.score(), 0);
     }
 
 }
