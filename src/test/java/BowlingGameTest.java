@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class BowlingGameTest {
 
     @Test
-    public void can_create_new_game() {
+    public void testBowlingGameCreation() {
         BowlingGame bowlingGame = new BowlingGame();
     }
 
