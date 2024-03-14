@@ -47,6 +47,17 @@ public class BowlingGameTest {
         Assertions.assertEquals(bowlingGame.score(), 16);
     }
 
+    @Test
+    public void oneStrike() {
+        BowlingGame bowlingGame = createNewBowlingGame();
+
+        bowlingGame.roll(10);
+        bowlingGame.roll(5);
+        bowlingGame.roll(3);
+        setRolls(bowlingGame, 16, 0);
+        Assertions.assertEquals(bowlingGame.score(), 26);
+    }
+
     private void setRolls(BowlingGame bowlingGame, int rolls, int pins) {
         for (int i = 0; i < rolls; i++) {
             bowlingGame.roll(pins);
