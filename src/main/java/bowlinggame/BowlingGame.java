@@ -20,7 +20,12 @@ public class BowlingGame {
             if (isSpare(i)) {
                 score += 10 + total[i + 2];
                 i += 2;
-            } else {
+            }
+            else if (total[i] == 10) {
+                score += 20 + total[i + 2];
+                i += 2;
+            }
+            else {
                 score += total[i] + total[i + 1];
                 i += 2;
             }
