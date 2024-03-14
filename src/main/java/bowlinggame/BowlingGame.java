@@ -22,8 +22,8 @@ public class BowlingGame {
                 i += 2;
             }
             else if (total[i] == 10) {
-                score += 20 + total[i + 2];
-                i += 2;
+                score += 10 + total[i + 2] + total[i + 1];
+                i += 1;
             }
             else {
                 score += total[i] + total[i + 1];
