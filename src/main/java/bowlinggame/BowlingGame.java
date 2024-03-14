@@ -13,6 +13,7 @@ package bowlinggame;
 public class BowlingGame {
     private int[] total = new int[21];
     private int currentRoll = 0;
+    private int frameIndex = 0;
 
     public void roll(int pins) {
         total[currentRoll++] = pins;
@@ -20,15 +21,14 @@ public class BowlingGame {
 
     public int score() {
         int score = 0;
-        int frameIndex = 0;
 
         for(int frame = 0; frame < 10; frame++) {
-            if (isSpare(frameIndex)) {
-                score += 10 + spareBonus(frameIndex);
+            if (isSpare()) {
+                score += 10 + spareBonus();
                 frameIndex += 2;
             }
-            else if (isStrike(frameIndex)) {
-                score += 10 + strikeBonus(frameIndex);
+            else if (isStrike()) {
+                score += 10 + strikeBonus();
                 frameIndex += 1;
             }
             else {
@@ -40,19 +40,19 @@ public class BowlingGame {
         return score;
     }
 
-    private Boolean isSpare(int frameIndex) {
+    private Boolean isSpare() {
         return total[frameIndex] + total[frameIndex + 1] == 10;
     }
 
-    private Boolean isStrike(int frameIndex){
+    private Boolean isStrike(){
         return total[frameIndex] == 10;
     }
 
-    private Integer spareBonus(int frameIndex) {
+    private Integer spareBonus() {
         return total[frameIndex + 2];
     }
 
-    private Integer strikeBonus(int frameIndex) {
+    private Integer strikeBonus() {
         return total[frameIndex + 2] + total[frameIndex + 1];
     }
 
