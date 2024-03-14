@@ -21,7 +21,7 @@ public class BowlingGame {
                 score += 10 + total[i + 2];
                 i += 2;
             }
-            else if (total[i] == 10) {
+            else if (isStrike(i)) {
                 score += 10 + total[i + 2] + total[i + 1];
                 i += 1;
             }
@@ -36,6 +36,10 @@ public class BowlingGame {
 
     private Boolean isSpare(int i) {
         return total[i] + total[i + 1] == 10;
+    }
+
+    private Boolean isStrike(int i){
+        return total[i] == 10;
     }
 
 }
