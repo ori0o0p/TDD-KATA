@@ -58,6 +58,15 @@ public class BowlingGameTest {
         Assertions.assertEquals(bowlingGame.score(), 26);
     }
 
+    @Test
+    public void perfectGame() {
+        BowlingGame bowlingGame = createNewBowlingGame();
+
+        setRolls(bowlingGame, 12, 10);
+        Assertions.assertEquals(bowlingGame.score(), 300);
+    }
+
+
     private void setRolls(BowlingGame bowlingGame, int rolls, int pins) {
         for (int i = 0; i < rolls; i++) {
             bowlingGame.roll(pins);
