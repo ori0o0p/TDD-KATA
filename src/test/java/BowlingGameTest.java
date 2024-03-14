@@ -66,6 +66,16 @@ public class BowlingGameTest {
         Assertions.assertEquals(bowlingGame.score(), 300);
     }
 
+    @Test
+    public void when10FrameGetSpareCanMoreRoll() {
+        BowlingGame bowlingGame = createNewBowlingGame();
+
+        setRolls(bowlingGame, 19, 0);
+        setRolls(bowlingGame, 2, 5); // spare
+        bowlingGame.roll(3); // more roll
+
+        Assertions.assertEquals(bowlingGame.score(), 16);
+    }
 
     private void setRolls(BowlingGame bowlingGame, int rolls, int pins) {
         for (int i = 0; i < rolls; i++) {
