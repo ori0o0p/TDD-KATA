@@ -1,7 +1,7 @@
 package bowlinggame;
 /*
  TDD Bowling game KATA
- 
+
 
 */
 public class BowlingGame {
@@ -17,7 +17,7 @@ public class BowlingGame {
         int i = 0;
 
         for(int frame = 0; frame < 10; frame++) {
-            if (total[i] + total[i + 1] == 10) {
+            if (isSpare(i)) {
                 score += 10 + total[i + 2];
                 i += 2;
             } else {
@@ -27,6 +27,10 @@ public class BowlingGame {
         }
 
         return score;
+    }
+
+    private Boolean isSpare(int i) {
+        return total[i] + total[i + 1] == 10;
     }
 
 }
