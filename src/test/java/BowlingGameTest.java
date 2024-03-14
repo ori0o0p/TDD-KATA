@@ -55,6 +55,7 @@ public class BowlingGameTest {
         bowlingGame.roll(5);
         bowlingGame.roll(3);
         setRolls(bowlingGame, 16, 0);
+
         Assertions.assertEquals(bowlingGame.score(), 26);
     }
 
@@ -70,11 +71,11 @@ public class BowlingGameTest {
     public void when10FrameGetSpareCanMoreRoll() {
         BowlingGame bowlingGame = createNewBowlingGame();
 
-        setRolls(bowlingGame, 19, 0);
+        setRolls(bowlingGame, 18, 0);
         setRolls(bowlingGame, 2, 5); // spare
         bowlingGame.roll(3); // more roll
 
-        Assertions.assertEquals(bowlingGame.score(), 16);
+        Assertions.assertEquals(bowlingGame.score(), 13);
     }
 
     private void setRolls(BowlingGame bowlingGame, int rolls, int pins) {
